@@ -225,17 +225,21 @@ let utl__file_rc =    expand("<sfile>")	    " Do not remove this line
 
     " [id=mediaTypeHandlersSpecific] {
 
-    "if !exists("g:utl_cfg_hdl_mt_application_excel")
-    "	     let g:utl_cfg_hdl_mt_application_excel = ':silent !start C:\Program Files\Microsoft Office\Office10\EXCEL.EXE "%P"'
-    "endif
+    if !exists("g:utl_cfg_hdl_mt_application_msword")
+        let g:utl_cfg_hdl_mt_application_msword = ':silent !start C:\Program Files\Microsoft Office\Office16\WINWORD.EXE "%P"'
+    endif
+
+    if !exists("g:utl_cfg_hdl_mt_application_excel")
+        let g:utl_cfg_hdl_mt_application_excel = ':silent !start C:\Program Files\Microsoft Office\Office16\EXCEL.EXE "%P"'
+    endif
 
     "if !exists("g:utl_cfg_hdl_mt_application_msmsg")
     "	     let g:utl_cfg_hdl_mt_application_msmsg = ':silent !start C:\Program Files\Microsoft Office\Office10\OUTLOOK.EXE -f "%P"'
     "endif
 
-    "if !exists("g:utl_cfg_hdl_mt_application_powerpoint")
-    "        let g:utl_cfg_hdl_mt_application_powerpoint = ':silent !start C:\Program Files\Microsoft Office\Office10\POWERPNT.EXE "%P"'
-    "endif
+    if !exists("g:utl_cfg_hdl_mt_application_powerpoint")
+            let g:utl_cfg_hdl_mt_application_powerpoint = ':silent !start C:\Program Files\Microsoft Office\Office16\POWERPNT.EXE "%P"'
+    endif
 
     "if !exists("g:utl_cfg_hdl_mt_application_rtf")
     "	     let g:utl_cfg_hdl_mt_application_rtf = ':silent !start C:\Program Files\Windows NT\Accessories\wordpad.exe "%P"'
